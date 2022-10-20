@@ -19,9 +19,9 @@
 //Напиши функцію findSmallerNumber(numbers)
 //яка шукає найменше в масиві
 //Додай перевірку що функція отримує масив
-const numbers = [100, 2, 5, 35, 56, 12, 24, 7, 80, 3];
+/* const numbers = [100, 2, 5, 35, 56, 12, 24, 7, 80, 3]; */
 
-function findSmallerNumber(numbers) {
+/* function findSmallerNumber(numbers) {
     if (!Array.isArray(numbers)) {
         console.log('Error');
         return 0;
@@ -40,5 +40,25 @@ function findSmallerNumber(numbers) {
 
 const min = findSmallerNumber("numbers");
 
-console.log(min);
+console.log(min); */
 
+//Напишіть функцію caculculateAverage()
+//яка приймає довільну кількість
+//Аргументів і повертає їхнє середнє значення.
+//Додати перевірку, що аргументи це числа.
+
+function caculculateAverage() {
+    console.log(arguments);
+    let avarege = 0;
+    let count =0;
+    
+    for (let argument of arguments) {
+        if (typeof argument !== "number") {
+            continue
+        }
+        avarege += argument
+        count += 1
+    }
+    console.log((avarege/count).toFixed(1));
+}
+caculculateAverage(2, 5, 7, 'f', 't')
