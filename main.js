@@ -88,40 +88,48 @@ console.log(min); */
 //3 замінить значення premium на false
 //4 виводить вміст об'єкта users у форматі
 //ключ:значення використовуючи Object.keys() і for...of
-const user = {
-   name: "John",
-   age: 20,
-   hobby: "tenis",
-   premium: true,
-};
+// const user = {
+//    name: "John",
+//    age: 20,
+//    hobby: "tenis",
+//    premium: true,
+// };
 
-user.mood = 'happy';
+// user.mood = 'happy';
 
-// user['mood']='happy';
+// // user['mood']='happy';
 
-// const userMood = {} ;
-// user[userMood] = 'happy';
+// // const userMood = {} ;
+// // user[userMood] = 'happy';
 
-// user.hobby = 'skydiving';
+// // user.hobby = 'skydiving';
 
-// user['hobby'] =  'skydiving';
+// // user['hobby'] =  'skydiving';
 
-const urerHobby = 'hobby';
+// const urerHobby = 'hobby';
 
-user[urerHobby] = 'skydiving';
+// user[urerHobby] = 'skydiving';
 
-const userKeys = Object.keys(user);
+// const userKeys = Object.keys(user);
  
-for (const key of userKeys) {
-    console.log(`${key}:${user[key]}`);
+// for (const key of userKeys) {
+//     console.log(`${key}:${user[key]}`);
+// }
+
+
+// console.log(user);
+
+// Задание развернуть массив без создания нового массива
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+
+// console.log(numbers.reverse());
+
+for (let i = 0; i < numbers.length/2; i += 1) {
+    let template = numbers[i];
+    numbers[i] = numbers[numbers.length - 1 - i];
+    numbers[numbers.length - 1 - i] = template;
+    
 }
 
-
-console.log(user);
-
-
-
-
-
-
-
+console.log(numbers);
