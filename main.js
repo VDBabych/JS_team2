@@ -15,7 +15,6 @@
 // const result = min(2, 5);
 // console.log(result);
 
-
 //Напиши функцію findSmallerNumber(numbers)
 //яка шукає найменше в масиві
 //Додай перевірку що функція отримує масив
@@ -47,18 +46,35 @@ console.log(min); */
 //Аргументів і повертає їхнє середнє значення.
 //Додати перевірку, що аргументи це числа.
 
-function caculculateAverage() {
-    console.log(arguments);
-    let avarege = 0;
-    let count =0;
-    
-    for (let argument of arguments) {
-        if (typeof argument !== "number") {
-            continue
-        }
-        avarege += argument
-        count += 1
-    }
-    console.log((avarege/count).toFixed(1));
-}
-caculculateAverage(2, 5, 7, 'f', 't')
+// function caculculateAverage() {
+//     console.log(arguments);
+//     let avarege = 0;
+//     let count =0;
+
+//     for (let argument of arguments) {
+//         if (typeof argument !== "number") {
+//             continue
+//         }
+//         avarege += argument
+//         count += 1
+//     }
+//     console.log((avarege/count).toFixed(1));
+// }
+// caculculateAverage(2, 5, 7, 'f', 't')
+
+// Створіть масив styles з елементами «Джаз» та «Блюз».
+//Додайте "Рок-н-рол" в кінець.
+// Замініть значення "Блюз" на "Класика".
+//Видалить перший елемент масиву і виведіть його в консоль.
+//Вставте «Реп» і «Реггі» на початок масиву.
+const styles = ["Джаз", "Блюз"];
+styles.push("Рок-н-рол");
+console.log(styles);
+// console.log(styles.push("Рок-н-рол"));
+console.log(styles.splice(1, 1, "Класика"));
+console.log(styles);
+
+// console.log(styles.splice(0, 1)[0]);
+
+styles.unshift("Реп", "Реггі");
+console.log(styles);
