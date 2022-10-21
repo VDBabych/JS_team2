@@ -117,19 +117,122 @@ console.log(min); */
 // }
 
 
-// console.log(user);
+// // console.log(user);
 
-// Задание развернуть массив без создания нового массива
+// // Задание развернуть массив без создания нового массива
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8]
 
-// console.log(numbers.reverse());
+// // console.log(numbers.reverse());
 
-for (let i = 0; i < numbers.length/2; i += 1) {
-    let template = numbers[i];
-    numbers[i] = numbers[numbers.length - 1 - i];
-    numbers[numbers.length - 1 - i] = template;
+// for (let i = 0; i < numbers.length/2; i += 1) {
+//     let template = numbers[i];
+//     numbers[i] = numbers[numbers.length - 1 - i];
+//     numbers[numbers.length - 1 - i] = template;
     
+// }
+
+// console.log(numbers);
+
+const people = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//нарцис  'Jhon'
+
+const people1 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: [],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса'
+
+const people3 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Eva'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса
+
+const people4 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: ['Eva'],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса'
+// Нарциса знають всі, нарцис незнає нікого
+
+
+const findNarcissus = (arr) => {
+    let narcissus = "";
+    for (let obj of arr) {
+        if(obj.know.length === 0) {
+            narcissus = obj.name
+        }
+    }
+    if (!narcissus) return 'немає нарциса'
+    for (let obj of arr) {
+        if(obj.name === narcissus) {
+            continue
+        }
+        if(!obj.know.includes(narcissus)) {
+            return "немає нарциса"
+        }
+    }
+    return narcissus
 }
 
-console.log(numbers);
+console.log(findNarcissus(people4)); 
