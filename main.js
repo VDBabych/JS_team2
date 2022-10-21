@@ -79,8 +79,6 @@ console.log(min); */
 // styles.unshift("Реп", "Реггі");
 // console.log(styles);
 
-
-
 //Напиши скрипт для об'єкта user,
 //Послідовно:
 //1 додасть поле mood зі значенням 'happy'
@@ -111,11 +109,10 @@ console.log(min); */
 // user[urerHobby] = 'skydiving';
 
 // const userKeys = Object.keys(user);
- 
+
 // for (const key of userKeys) {
 //     console.log(`${key}:${user[key]}`);
 // }
-
 
 // // console.log(user);
 
@@ -129,7 +126,7 @@ console.log(min); */
 //     let template = numbers[i];
 //     numbers[i] = numbers[numbers.length - 1 - i];
 //     numbers[numbers.length - 1 - i] = template;
-    
+
 // }
 
 // console.log(numbers);
@@ -215,7 +212,6 @@ console.log(min); */
 //немає нарциса'
 // Нарциса знають всі, нарцис незнає нікого
 
-
 // const findNarcissus = (arr) => {
 //     let narcissus = "";
 //     for (let obj of arr) {
@@ -241,15 +237,15 @@ console.log(min); */
 //новий об'єкт без зазначеного параметра
 //Очікуваний результат ({a: 1, b: 2}, 'b') => {a: 1}
 
-const superObj = { a: 1, b: 2, c: 4, d: 11 };
-const updateObject = function (obj, removeKey) {
-  const newObj = { ...obj };
-  delete newObj[removeKey];
-  return newObj
-}
+// const superObj = { a: 1, b: 2, c: 4, d: 11 };
+// const updateObject = function (obj, removeKey) {
+//   const newObj = { ...obj };
+//   delete newObj[removeKey];
+//   return newObj
+// }
 
-console.log(updateObject(superObj, 'b'));;
-console.log(superObj);
+// console.log(updateObject(superObj, 'b'));;
+// console.log(superObj);
 // const updateObject = function (obj, removeKey) {
 //   const keys = Object.keys(obj);
 //   const newObj = {}
@@ -264,3 +260,32 @@ console.log(superObj);
 // }
 
 // updateObject({ a: 1, b: 2, c: 4, d: 11}, 'b');
+
+// Створіть об'єкт calculator із трьома методами
+//read(a, b) - приймає два аргументи та зберігає їх
+//як властивості об'єкта
+//sum() повертає суму збережених значень
+//mult() перемножує збережені значення та повертає результат
+const calculator = {
+  read(a, b) {
+    this.a = a;
+    this.b = b;
+  },
+  sum() {
+    if (!this.a && !this.b) {
+      return 0;
+    }
+    return this.a + this.b;
+  },
+
+  mult() {
+    if (!this.a && !this.b) {
+      return 0;
+    }
+    return this.a * this.b;
+  },
+};
+calculator.read(2, 5);
+console.log(calculator);
+console.log(calculator.sum());
+console.log(calculator.mult());
