@@ -134,105 +134,133 @@ console.log(min); */
 
 // console.log(numbers);
 
-const people = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
+// const people = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
 //нарцис  'Jhon'
 
-const people1 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: [],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
+// const people1 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: [],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
 //немає нарциса'
 
-const people3 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Eva'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
+// const people3 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Eva'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
 //немає нарциса
 
-const people4 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: ['Eva'],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
+// const people4 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: ['Eva'],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
 //немає нарциса'
 // Нарциса знають всі, нарцис незнає нікого
 
 
-const findNarcissus = (arr) => {
-    let narcissus = "";
-    for (let obj of arr) {
-        if(obj.know.length === 0) {
-            narcissus = obj.name
-        }
-    }
-    if (!narcissus) return 'немає нарциса'
-    for (let obj of arr) {
-        if(obj.name === narcissus) {
-            continue
-        }
-        if(!obj.know.includes(narcissus)) {
-            return "немає нарциса"
-        }
-    }
-    return narcissus
+// const findNarcissus = (arr) => {
+//     let narcissus = "";
+//     for (let obj of arr) {
+//         if(obj.know.length === 0) {
+//             narcissus = obj.name
+//         }
+//     }
+//     if (!narcissus) return 'немає нарциса'
+//     for (let obj of arr) {
+//         if(obj.name === narcissus) {
+//             continue
+//         }
+//         if(!obj.know.includes(narcissus)) {
+//             return "немає нарциса"
+//         }
+//     }
+//     return narcissus
+// }
+
+// console.log(findNarcissus(people4));
+
+//Напишіть функцію updateObject, яка приймає об'єкт та повертає
+//новий об'єкт без зазначеного параметра
+//Очікуваний результат ({a: 1, b: 2}, 'b') => {a: 1}
+
+const superObj = { a: 1, b: 2, c: 4, d: 11 };
+const updateObject = function (obj, removeKey) {
+  const newObj = { ...obj };
+  delete newObj[removeKey];
+  return newObj
 }
 
-console.log(findNarcissus(people4)); 
+console.log(updateObject(superObj, 'b'));;
+console.log(superObj);
+// const updateObject = function (obj, removeKey) {
+//   const keys = Object.keys(obj);
+//   const newObj = {}
+//   for (let key of keys) {
+//     if (key === removeKey) {
+//       continue;
+//     }
+//     newObj[key] = obj[key];
+//   }
+//   console.log(newObj);
+//   return newObj
+// }
+
+// updateObject({ a: 1, b: 2, c: 4, d: 11}, 'b');
