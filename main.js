@@ -266,26 +266,47 @@ console.log(min); */
 //як властивості об'єкта
 //sum() повертає суму збережених значень
 //mult() перемножує збережені значення та повертає результат
-const calculator = {
-  read(a, b) {
-    this.a = a;
-    this.b = b;
-  },
-  sum() {
-    if (!this.a && !this.b) {
-      return 0;
-    }
-    return this.a + this.b;
-  },
+// const calculator = {
+//   read(a, b) {
+//     this.a = a;
+//     this.b = b;
+//   },
+//   sum() {
+//     if (!this.a && !this.b) {
+//       return 0;
+//     }
+//     return this.a + this.b;
+//   },
 
-  mult() {
-    if (!this.a && !this.b) {
-      return 0;
-    }
-    return this.a * this.b;
-  },
+//   mult() {
+//     if (!this.a && !this.b) {
+//       return 0;
+//     }
+//     return this.a * this.b;
+//   },
+// };
+// calculator.read(2, 5);
+// console.log(calculator);
+// console.log(calculator.sum());
+// console.log(calculator.mult());
+
+// Напишіть функцію, яка приймає як параметр об'єкт
+//і формує об'єкти у новому масиві у форматі [key, value]
+const user6 = {
+  name: "John",
+  surName: "Stones",
+  age: 20,
+  hobby: "tenis",
+  haveCar: true,
+  merried: false,
 };
-calculator.read(2, 5);
-console.log(calculator);
-console.log(calculator.sum());
-console.log(calculator.mult());
+
+// function creatObj(obj) {
+//   // console.log(Object.entries(obj));
+//   const arr = [];
+//   for (const key in obj) {
+//     arr.push({ [key]: obj[key] });
+//   }
+//   console.log(arr);
+// }
+// creatObj(user6);
