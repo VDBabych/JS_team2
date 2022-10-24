@@ -326,81 +326,100 @@ console.log(min); */
   * { name: '🍓', price: 110 }
   */
 
-const cart = {
-    items: [],
-    getItems() {
-        return this.items
-    },
+// const cart = {
+//     items: [],
+//     getItems() {
+//         return this.items
+//     },
 
-    add(product) {
-        for (let item of this.items) {
-            if (item.name === product.name) {
-                item.quantity += 1;
-                return
-            }
-        }
-        this.items.push({ ...product, quantity : 1 })
+//     add(product) {
+//         for (let item of this.items) {
+//             if (item.name === product.name) {
+//                 item.quantity += 1;
+//                 return
+//             }
+//         }
+//         this.items.push({ ...product, quantity : 1 })
 
-    },
+//     },
 
-    remove(productName) {
-        for (let i = 0; i < this.items.length; i += 1) {
-            if (this.items[i].name === productName) {
-                this.items.splice(i, 1)
-                return
-            }
-        }
-    },
+//     remove(productName) {
+//         for (let i = 0; i < this.items.length; i += 1) {
+//             if (this.items[i].name === productName) {
+//                 this.items.splice(i, 1)
+//                 return
+//             }
+//         }
+//     },
     
-    clear() {
-        this.items = [];
-    },
+//     clear() {
+//         this.items = [];
+//     },
 
-    countTotalPrice() {
-        let totalPrice = 0;
+//     countTotalPrice() {
+//         let totalPrice = 0;
 
-        for (let item of this.items) {
-            totalPrice += item.price*item.quantity
-        }
-        return totalPrice;
-    },
+//         for (let item of this.items) {
+//             totalPrice += item.price*item.quantity
+//         }
+//         return totalPrice;
+//     },
 
-    increaseQuantity(productName) {
-        for (let i = 0; i < this.items.length; i += 1) {
-            if (this.items[i].name === productName) {
-                this.items[i].quantity += 1;
-                return
-            }
-        }
-    },
+//     increaseQuantity(productName) {
+//         for (let i = 0; i < this.items.length; i += 1) {
+//             if (this.items[i].name === productName) {
+//                 this.items[i].quantity += 1;
+//                 return
+//             }
+//         }
+//     },
 
-    decreaseQuantity(productName) {
-        for (let i = 0; i < this.items.length; i += 1) {
-            if (this.items[i].name === productName) {
-                this.items[i].quantity -= 1;
-                if (this.items[i].quantity === 0) {
-                    this.items.splice(i, 1)
-                    return
-                }
-            }
-        }
-    }
+//     decreaseQuantity(productName) {
+//         for (let i = 0; i < this.items.length; i += 1) {
+//             if (this.items[i].name === productName) {
+//                 this.items[i].quantity -= 1;
+//                 if (this.items[i].quantity === 0) {
+//                     this.items.splice(i, 1)
+//                     return
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// cart.add({ name: '🍎', price: 50 });
+// cart.add({ name: '🍇', price: 70 });
+// cart.add({ name: '🍋', price: 60 });
+// cart.add({ name: '🍋', price: 60 });
+// cart.add({ name: '🍋', price: 60 });
+// cart.add({ name: '🍋', price: 60 });
+// cart.add({ name: '🍋', price: 60 });
+// cart.add({ name: '🍓', price: 110 });
+// cart.add({ name: '🍓', price: 110 });
+
+// cart.remove('🍋');
+// cart.increaseQuantity('🍎');
+// cart.decreaseQuantity('🍇');
+// cart.decreaseQuantity('🍎');
+// console.table(cart.getItems());
+// console.log(cart.countTotalPrice());
+
+
+const vehicles = [
+  { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
+  { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
+  { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
+  { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
+  { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
+  { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
+  { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
+  { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
+  { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
+  { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false },
+];
+
+const smth = ({ model, amount }) => {
+    console.log(model, amount);
 }
 
-cart.add({ name: '🍎', price: 50 });
-cart.add({ name: '🍇', price: 70 });
-cart.add({ name: '🍋', price: 60 });
-cart.add({ name: '🍋', price: 60 });
-cart.add({ name: '🍋', price: 60 });
-cart.add({ name: '🍋', price: 60 });
-cart.add({ name: '🍋', price: 60 });
-cart.add({ name: '🍓', price: 110 });
-cart.add({ name: '🍓', price: 110 });
-
-cart.remove('🍋');
-cart.increaseQuantity('🍎');
-cart.decreaseQuantity('🍇');
-cart.decreaseQuantity('🍎');
-console.table(cart.getItems());
-console.log(cart.countTotalPrice());
-
+vehicles.forEach(smth);
