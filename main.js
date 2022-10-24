@@ -405,7 +405,7 @@ console.log(min); */
 // console.log(cart.countTotalPrice());
 
 
-const vehicles = [
+/* const vehicles = [
   { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
   { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
   { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
@@ -422,4 +422,17 @@ const smth = ({ model, amount }) => {
     console.log(model, amount);
 }
 
-vehicles.forEach(smth);
+vehicles.forEach(smth); */
+
+//Даний масив із числами. Створіть новий масив, що складається із квадратів цих чисел
+//[5, 6, 7, 8, 9]
+
+function multiply (args) {const newArray = []
+
+    args.forEach((item)=>{
+        newArray.push(item*item)
+        });    console.log(newArray)
+        return
+}
+
+multiply([5, 6, 7, 8, 9])
