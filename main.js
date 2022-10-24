@@ -427,12 +427,29 @@ vehicles.forEach(smth); */
 //Даний масив із числами. Створіть новий масив, що складається із квадратів цих чисел
 //[5, 6, 7, 8, 9]
 
-function multiply (args) {const newArray = []
+// function multiply (args) {const newArray = []
 
-    args.forEach((item)=>{
-        newArray.push(item*item)
-        });    console.log(newArray)
-        return
+//     args.forEach((item)=>{
+//         newArray.push(item*item)
+//         });    console.log(newArray)
+//         return
+// }
+
+// multiply([5, 6, 7, 8, 9])
+
+
+// Даний масив із числами. Числа можуть бути позитивними та негативними. Знайдіть суму позитивних елементів цього масиву. [1, 2 , -5, -7 , -9, 2 , 5 , 4, -69, 85,-5]
+
+const numbers = [1, 2, -5, -7, -9, 2, 5, 4, -69, 85, -5];
+const sum = function (arr) {
+    let total = 0;
+    arr.forEach((el) => {
+        if (el > 0) {
+            total += el;
+        }
+
+    })
+    console.log(total);
 }
 
-multiply([5, 6, 7, 8, 9])
+sum(numbers);
