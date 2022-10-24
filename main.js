@@ -441,15 +441,39 @@ vehicles.forEach(smth); */
 // Даний масив із числами. Числа можуть бути позитивними та негативними. Знайдіть суму позитивних елементів цього масиву. [1, 2 , -5, -7 , -9, 2 , 5 , 4, -69, 85,-5]
 
 const numbers = [1, 2, -5, -7, -9, 2, 5, 4, -69, 85, -5];
-const sum = function (arr) {
-    let total = 0;
-    arr.forEach((el) => {
-        if (el > 0) {
-            total += el;
-        }
+// let sum = 0;
+// const sum = function (arr) {
+//     let total = 0;
+//     arr.forEach((el) => {
+//         if (el > 0) {
+//             total += el;
+//         }
 
-    })
-    console.log(total);
+//     })
+//     console.log(total);
+// }
+
+// sum(numbers);
+
+function sumOfAll (array, positive, negative)  {
+    let sumPos= 0;
+    let sumNeg = 0;
+for (let i = 0; i < array.length; i++){
+if (array[i] > 0){
+   sumPos+= positive(array[i]);
+}else{
+sumNeg += negative(array[i]);
+}
+    
+}
+console.log([sumPos, sumNeg])
 }
 
-sum(numbers);
+
+const checkPositive = (item) => item;
+
+
+const checkNegative = (item)=> item;
+
+
+sumOfAll(numbers, checkPositive, checkNegative)
