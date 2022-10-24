@@ -440,7 +440,7 @@ vehicles.forEach(smth); */
 
 // Даний масив із числами. Числа можуть бути позитивними та негативними. Знайдіть суму позитивних елементів цього масиву. [1, 2 , -5, -7 , -9, 2 , 5 , 4, -69, 85,-5]
 
-const numbers = [1, 2, -5, -7, -9, 2, 5, 4, -69, 85, -5];
+// const numbers = [1, 2, -5, -7, -9, 2, 5, 4, -69, 85, -5];
 // let sum = 0;
 // const sum = function (arr) {
 //     let total = 0;
@@ -455,25 +455,59 @@ const numbers = [1, 2, -5, -7, -9, 2, 5, 4, -69, 85, -5];
 
 // sum(numbers);
 
-function sumOfAll (array, positive, negative)  {
-    let sumPos= 0;
-    let sumNeg = 0;
-for (let i = 0; i < array.length; i++){
-if (array[i] > 0){
-   sumPos+= positive(array[i]);
-}else{
-sumNeg += negative(array[i]);
-}
+// function sumOfAll (array, positive, negative)  {
+//     let sumPos= 0;
+//     let sumNeg = 0;
+// for (let i = 0; i < array.length; i++){
+// if (array[i] > 0){
+//    sumPos+= positive(array[i]);
+// }else{
+// sumNeg += negative(array[i]);
+// }
     
-}
-console.log([sumPos, sumNeg])
-}
+// }
+// console.log([sumPos, sumNeg])
+// }
 
 
-const checkPositive = (item) => item;
+// const checkPositive = (item) => item;
 
 
-const checkNegative = (item)=> item;
+// const checkNegative = (item)=> item;
 
 
-sumOfAll(numbers, checkPositive, checkNegative)
+// sumOfAll(numbers, checkPositive, checkNegative)
+
+
+// Даний масив з елементами 1, 2, 5, 9, 4, 13, 4, 10. За допомогою циклу foreach та оператора if перевірте, чи є в масиві елемент зі значенням, рівним 4. 
+// Якщо є - виведіть на екран 'Є!' і вийдіть із циклу.Якщо ні – нічого робити не треба.
+
+// const numbers = [4, 1, 2, 5, 9,  13, 4, 10];
+
+// numbers.forEach((item) => {
+//     if (item === 4) {
+//         console.log("Є!");
+//         return;
+//     }
+//     console.log(item);
+// }); 
+
+// Даний масив числами, наприклад: [10, 20, 30, 50, 235, 3000, 600, 758]. 
+// Виведіть на екран лише ті числа з масиву, які починаються на цифру 1, 2 чи 5.
+
+const numbers = [10, 20, 30, 50, 235, 3000, 600, 758];
+
+// numbers.forEach((item) => {
+//     const numberToString = String(item);
+//     if (numberToString.startsWith('1') || numberToString.startsWith('2') || numberToString.startsWith('5')) {
+//     console.log(numberToString);
+//     }
+    
+// });
+
+numbers.forEach((item) => {
+    const numberToString = String(item);
+    if (numberToString[0] === '1' || numberToString[0] === '2' || numberToString[0] === '5') {
+    console.log(item);
+    }
+ });
