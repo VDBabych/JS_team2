@@ -508,6 +508,25 @@ vehicles.forEach(smth); */
 
 //Реалізувати фільтр за якістю amount і отримати
 // Тільки назва моделі
+
+
+// const modelName = vehicles
+//   .filter(({ amount }) => amount > 12)
+//   .map(({ model }) => model);
+
+// console.table(modelName);
+
+// const numbers = [1, 9, 0, 1, 5, 9, 1, 6];
+
+// const filteredNumbers = numbers.filter((number, index, arr) => arr.indexOf(number) === index)
+// const newFilteredNumbers = numbers.reduce((acc, number) => {
+//   if (!acc.includes(number)) { acc.push(number) } return acc;
+// }, [])
+//   const newFilteredNumbers = numbers.reduce((acc, number) => !acc.includes(number) ? [...acc, number] : acc, [])
+// console.log(filteredNumbers);
+// console.log(newFilteredNumbers);
+
+// Отримати авто на розпродажі і сортувати за зменшенням ціни
 const vehicles = [
   {
     make: "Honda",
@@ -591,18 +610,6 @@ const vehicles = [
   },
 ];
 
-// const modelName = vehicles
-//   .filter(({ amount }) => amount > 12)
-//   .map(({ model }) => model);
+const carOnSale = vehicles.filter(({ onSale }) => onSale).sort(({ price: a}, {price: b}) => a - b);
 
-// console.table(modelName);
-
-// const numbers = [1, 9, 0, 1, 5, 9, 1, 6];
-
-// const filteredNumbers = numbers.filter((number, index, arr) => arr.indexOf(number) === index)
-// const newFilteredNumbers = numbers.reduce((acc, number) => {
-//   if (!acc.includes(number)) { acc.push(number) } return acc;
-// }, [])
-//   const newFilteredNumbers = numbers.reduce((acc, number) => !acc.includes(number) ? [...acc, number] : acc, [])
-// console.log(filteredNumbers);
-// console.log(newFilteredNumbers);
+console.table(carOnSale);
