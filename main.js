@@ -527,7 +527,7 @@ vehicles.forEach(smth); */
 // console.log(newFilteredNumbers);
 
 // Отримати авто на розпродажі і сортувати за зменшенням ціни
-const vehicles = [
+/* const vehicles = [
   {
     make: "Honda",
     model: "CR-V",
@@ -612,4 +612,21 @@ const vehicles = [
 
 const carOnSale = vehicles.filter(({ onSale }) => onSale).sort(({ price: a}, {price: b}) => a - b);
 
-console.table(carOnSale);
+console.table(carOnSale); */
+
+//Призначити знижку 20% на фрукти в масиві,
+//Присвоїти ID для кожного продукту
+const fruits = [
+  { name: 'apple', price: 200 },
+  { name: 'orange', price: 300 },
+  { name: 'grapes', price: 750 },
+];
+
+/* const newPrices = fruits.reduce((acc, fruit)=>{acc.push({...fruit, price: fruit.price*0.8, id:Date.now()}); return acc},[])
+console.log(newPrices) */
+
+/* const newPrices = fruits.reduce((acc, fruit)=> [...acc, {...fruit, price: fruit.price*0.8, id:Date.now()}], [])
+console.log(newPrices) */
+
+const newPrices = fruits.map(fruit=> ({...fruit, price: fruit.price*0.8, id:Date.now()}))
+console.log(newPrices)
