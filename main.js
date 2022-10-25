@@ -489,7 +489,7 @@ vehicles.forEach(smth); */
 // Даний масив числами, наприклад: [10, 20, 30, 50, 235, 3000, 600, 758].
 // Виведіть на екран лише ті числа з масиву, які починаються на цифру 1, 2 чи 5.
 
-const numbers = [10, 20, 30, 50, 235, 3000, 600, 758];
+// const numbers = [10, 20, 30, 50, 235, 3000, 600, 758];
 
 // numbers.forEach((item) => {
 //     const numberToString = String(item);
@@ -591,8 +591,18 @@ const vehicles = [
   },
 ];
 
-const modelName = vehicles
-  .filter(({ amount }) => amount > 12)
-  .map(({ model }) => model);
+// const modelName = vehicles
+//   .filter(({ amount }) => amount > 12)
+//   .map(({ model }) => model);
 
-console.table(modelName);
+// console.table(modelName);
+
+// const numbers = [1, 9, 0, 1, 5, 9, 1, 6];
+
+// const filteredNumbers = numbers.filter((number, index, arr) => arr.indexOf(number) === index)
+// const newFilteredNumbers = numbers.reduce((acc, number) => {
+//   if (!acc.includes(number)) { acc.push(number) } return acc;
+// }, [])
+//   const newFilteredNumbers = numbers.reduce((acc, number) => !acc.includes(number) ? [...acc, number] : acc, [])
+// console.log(filteredNumbers);
+// console.log(newFilteredNumbers);
