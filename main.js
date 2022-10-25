@@ -311,20 +311,20 @@ console.log(min); */
 // }
 // creatObj(user6);
 /*
-  * Працю з колекцією товарів у кошику:
-  * - getItems()
-  * - add(product)
-  * - remove(productName)
-  * - clear()
-  * - countTotalPrice()
-  * - increaseQuantity(productName)
-  * - decreaseQuantity(productName)
-  *
-  * { name: '🍎', price: 50 }
-  * { name: '🍇', price: 70 }
-  * { name: '🍋', price: 60 }
-  * { name: '🍓', price: 110 }
-  */
+ * Працю з колекцією товарів у кошику:
+ * - getItems()
+ * - add(product)
+ * - remove(productName)
+ * - clear()
+ * - countTotalPrice()
+ * - increaseQuantity(productName)
+ * - decreaseQuantity(productName)
+ *
+ * { name: '🍎', price: 50 }
+ * { name: '🍇', price: 70 }
+ * { name: '🍋', price: 60 }
+ * { name: '🍓', price: 110 }
+ */
 
 // const cart = {
 //     items: [],
@@ -351,7 +351,7 @@ console.log(min); */
 //             }
 //         }
 //     },
-    
+
 //     clear() {
 //         this.items = [];
 //     },
@@ -404,7 +404,6 @@ console.log(min); */
 // console.table(cart.getItems());
 // console.log(cart.countTotalPrice());
 
-
 /* const vehicles = [
   { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
   { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
@@ -437,7 +436,6 @@ vehicles.forEach(smth); */
 
 // multiply([5, 6, 7, 8, 9])
 
-
 // Даний масив із числами. Числа можуть бути позитивними та негативними. Знайдіть суму позитивних елементів цього масиву. [1, 2 , -5, -7 , -9, 2 , 5 , 4, -69, 85,-5]
 
 // const numbers = [1, 2, -5, -7, -9, 2, 5, 4, -69, 85, -5];
@@ -464,22 +462,18 @@ vehicles.forEach(smth); */
 // }else{
 // sumNeg += negative(array[i]);
 // }
-    
+
 // }
 // console.log([sumPos, sumNeg])
 // }
 
-
 // const checkPositive = (item) => item;
-
 
 // const checkNegative = (item)=> item;
 
-
 // sumOfAll(numbers, checkPositive, checkNegative)
 
-
-// Даний масив з елементами 1, 2, 5, 9, 4, 13, 4, 10. За допомогою циклу foreach та оператора if перевірте, чи є в масиві елемент зі значенням, рівним 4. 
+// Даний масив з елементами 1, 2, 5, 9, 4, 13, 4, 10. За допомогою циклу foreach та оператора if перевірте, чи є в масиві елемент зі значенням, рівним 4.
 // Якщо є - виведіть на екран 'Є!' і вийдіть із циклу.Якщо ні – нічого робити не треба.
 
 // const numbers = [4, 1, 2, 5, 9,  13, 4, 10];
@@ -490,9 +484,9 @@ vehicles.forEach(smth); */
 //         return;
 //     }
 //     console.log(item);
-// }); 
+// });
 
-// Даний масив числами, наприклад: [10, 20, 30, 50, 235, 3000, 600, 758]. 
+// Даний масив числами, наприклад: [10, 20, 30, 50, 235, 3000, 600, 758].
 // Виведіть на екран лише ті числа з масиву, які починаються на цифру 1, 2 чи 5.
 
 const numbers = [10, 20, 30, 50, 235, 3000, 600, 758];
@@ -502,12 +496,103 @@ const numbers = [10, 20, 30, 50, 235, 3000, 600, 758];
 //     if (numberToString.startsWith('1') || numberToString.startsWith('2') || numberToString.startsWith('5')) {
 //     console.log(numberToString);
 //     }
-    
+
 // });
 
-numbers.forEach((item) => {
-    const numberToString = String(item);
-    if (numberToString[0] === '1' || numberToString[0] === '2' || numberToString[0] === '5') {
-    console.log(item);
-    }
- });
+// numbers.forEach((item) => {
+//     const numberToString = String(item);
+//     if (numberToString[0] === '1' || numberToString[0] === '2' || numberToString[0] === '5') {
+//     console.log(item);
+//     }
+//  });
+
+//Реалізувати фільтр за якістю amount і отримати
+// Тільки назва моделі
+const vehicles = [
+  {
+    make: "Honda",
+    model: "CR-V",
+    type: "suv",
+    amount: 14,
+    price: 24045,
+    onSale: true,
+  },
+  {
+    make: "Honda",
+    model: "Accord",
+    type: "sedan",
+    amount: 2,
+    price: 22455,
+    onSale: true,
+  },
+  {
+    make: "Mazda",
+    model: "Mazda 6",
+    type: "sedan",
+    amount: 8,
+    price: 24195,
+    onSale: false,
+  },
+  {
+    make: "Mazda",
+    model: "CX-9",
+    type: "suv",
+    amount: 7,
+    price: 31520,
+    onSale: true,
+  },
+  {
+    make: "Toyota",
+    model: "4Runner",
+    type: "suv",
+    amount: 19,
+    price: 34210,
+    onSale: false,
+  },
+  {
+    make: "Toyota",
+    model: "Sequoia",
+    type: "suv",
+    amount: 16,
+    price: 45560,
+    onSale: false,
+  },
+  {
+    make: "Toyota",
+    model: "Tacoma",
+    type: "truck",
+    amount: 4,
+    price: 24320,
+    onSale: true,
+  },
+  {
+    make: "Ford",
+    model: "F-150",
+    type: "truck",
+    amount: 11,
+    price: 27110,
+    onSale: true,
+  },
+  {
+    make: "Ford",
+    model: "Fusion",
+    type: "sedan",
+    amount: 13,
+    price: 22120,
+    onSale: true,
+  },
+  {
+    make: "Ford",
+    model: "Explorer",
+    type: "suv",
+    amount: 6,
+    price: 31660,
+    onSale: false,
+  },
+];
+
+const modelName = vehicles
+  .filter(({ amount }) => amount > 12)
+  .map(({ model }) => model);
+
+console.table(modelName);
