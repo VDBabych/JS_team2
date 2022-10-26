@@ -689,3 +689,47 @@ console.log(newPrices) */
 // };
 
 // console.log(fnA(a, b));
+
+// Знайти перший унікальний символ у рядку
+//У рядку будуть лише літери латинського алфавіту і вони будуть у lowerCase
+
+let input1 = 'leetcode'; //0
+let input2 = 'loveleetcode'; //2
+let input3 = 'aabb'; //-1
+
+// function makeMeCoffee (string) {
+//   const array = string.split("");
+//   console.log(array);
+//   const newArray = array.reduce((acc, item) => {
+//     console.log(acc);
+//     return { ...acc, [item]: acc[item] ? acc[item] + 1 : 1 }
+//   }, {})
+//   console.log(newArray);
+// }
+
+// makeMeCoffee(input1);
+
+function makeMeCoffee (string) {
+  const array = string.split("");
+  // console.log(array);
+  const newArray = array.reduce((acc, item) => {
+    // console.log(acc);
+    if (acc[item]) {
+      acc[item] = acc[item] += 1;
+    } else {
+      acc[item] = 1;
+    }
+    return acc;
+  }, {})
+  // console.log(newArray);
+  for (const key in newArray) {
+    if (newArray[key] === 1) {
+      return array.indexOf(key);
+    }
+  }
+  return -1;
+}
+
+console.log(makeMeCoffee(input1)); 
+console.log(makeMeCoffee(input2)); 
+console.log(makeMeCoffee(input3)); 
