@@ -652,3 +652,20 @@ console.log(newPrices) */
 // }
 
 // callAction(product.showPrice.bind(product));
+
+// Яким буде результат при зверненні до об'єкта ref? Чому?
+
+// function makeUser() {
+//   console.log(this);
+//   return {
+//     name: "John",
+//     ref () { 
+//       return this
+//     }
+//   };
+// }
+
+// let user = makeUser();
+
+// console.log( user().ref.name )
+// console.log(user.ref().name);
