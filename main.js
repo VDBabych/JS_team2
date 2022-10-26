@@ -709,27 +709,70 @@ let input3 = 'aabb'; //-1
 
 // makeMeCoffee(input1);
 
-function makeMeCoffee (string) {
-  const array = string.split("");
-  // console.log(array);
-  const newArray = array.reduce((acc, item) => {
-    // console.log(acc);
-    if (acc[item]) {
-      acc[item] = acc[item] += 1;
-    } else {
-      acc[item] = 1;
-    }
-    return acc;
-  }, {})
-  // console.log(newArray);
-  for (const key in newArray) {
-    if (newArray[key] === 1) {
-      return array.indexOf(key);
-    }
-  }
-  return -1;
-}
+// function makeMeCoffee (string) {
+//   const array = string.split("");
+//   // console.log(array);
+//   const newArray = array.reduce((acc, item) => {
+//     // console.log(acc);
+//     if (acc[item]) {
+//       acc[item] = acc[item] += 1;
+//     } else {
+//       acc[item] = 1;
+//     }
+//     return acc;
+//   }, {})
+//   // console.log(newArray);
+//   for (const key in newArray) {
+//     if (newArray[key] === 1) {
+//       return array.indexOf(key);
+//     }
+//   }
+//   return -1;
+// }
 
-console.log(makeMeCoffee(input1)); 
-console.log(makeMeCoffee(input2)); 
-console.log(makeMeCoffee(input3)); 
+// const fnA = (input) => {
+//   return [...input].indexOf([...input].find((el, i, array) => array.indexOf(el) === array.lastIndexOf(el)));
+// };
+
+// const fnA = (input) => {
+//   return [...input].indexOf([...input].find((el, i, array) => array.indexOf(el) === array.lastIndexOf(el)));
+// };
+
+
+// const unique = (str) => {
+//   const arr = str.split("");
+//   const un = arr.find((el) => arr.indexOf(el) === arr.lastIndexOf(el));
+//   if (!un) return -1;
+//   return arr.indexOf(un)
+// };
+
+
+// console.log(makeMeCoffee(input1));
+// console.log(makeMeCoffee(input2));
+// console.log(makeMeCoffee(input3));
+// console.log(fnA(input1));
+// console.log(fnA(input2));
+// console.log(fnA(input3));
+
+// Створіть функцію, яка виводитиме нам усіх гравців
+
+const sport = {
+  tournament: 'The Master',
+  players: [
+    {
+      name: 'Wood',
+      age: 37
+    },
+    {
+      name: 'Mike',
+      age: 43
+    }
+  ],
+  getPlayers() {
+    console.log(this);
+    const arrow = () => { console.log(this); }
+    arrow()
+  },
+};
+
+sport.getPlayers();
