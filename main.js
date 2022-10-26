@@ -509,7 +509,6 @@ vehicles.forEach(smth); */
 //Реалізувати фільтр за якістю amount і отримати
 // Тільки назва моделі
 
-
 // const modelName = vehicles
 //   .filter(({ amount }) => amount > 12)
 //   .map(({ model }) => model);
@@ -659,7 +658,7 @@ console.log(newPrices) */
 //   console.log(this);
 //   return {
 //     name: "John",
-//     ref () { 
+//     ref () {
 //       return this
 //     }
 //   };
@@ -669,3 +668,24 @@ console.log(newPrices) */
 
 // console.log( user().ref.name )
 // console.log(user.ref().name);
+
+//Потрібно перевірити "same" масиви
+// числа з першого в квадраті дорівнюють числам другого
+
+// const a = [121, 144, 19, 161, 19, 144, 19, 11];
+// const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+
+// const fnA = (a, b) => {
+//   const var1 = [...a].sort((a, b) => a - b);
+//   const var2 = [...b].sort((a, b) => a - b);
+
+  //   for (let i = 0; i < var1.length; i += 1) {
+  //     if (var1[i] * var1[i] !== var2[i]) {
+  //       return false;
+  //     }
+  //   }
+  //   return true;
+//   return var1.map((el) => el * el).every((el, index) => el === var2[index]);
+// };
+
+// console.log(fnA(a, b));
