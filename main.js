@@ -616,11 +616,11 @@ console.table(carOnSale); */
 
 //Призначити знижку 20% на фрукти в масиві,
 //Присвоїти ID для кожного продукту
-const fruits = [
-  { name: 'apple', price: 200 },
-  { name: 'orange', price: 300 },
-  { name: 'grapes', price: 750 },
-];
+// const fruits = [
+//   { name: 'apple', price: 200 },
+//   { name: 'orange', price: 300 },
+//   { name: 'grapes', price: 750 },
+// ];
 
 /* const newPrices = fruits.reduce((acc, fruit)=>{acc.push({...fruit, price: fruit.price*0.8, id:Date.now()}); return acc},[])
 console.log(newPrices) */
@@ -628,5 +628,27 @@ console.log(newPrices) */
 /* const newPrices = fruits.reduce((acc, fruit)=> [...acc, {...fruit, price: fruit.price*0.8, id:Date.now()}], [])
 console.log(newPrices) */
 
-const newPrices = fruits.map(fruit=> ({...fruit, price: fruit.price*0.8, id:Date.now()}))
-console.log(newPrices)
+// const newPrices = fruits.map(fruit=> ({...fruit, price: fruit.price*0.8, id:Date.now()}))
+// console.log(newPrices)
+
+// Виправте помилки, щоб код працював
+// const product = {
+// price: 5000,
+// showPrice() {
+// console.log(this.price);
+// },
+// };
+// product.showPrice();
+
+// const product = {
+//   price: 5000,
+//   showPrice() {
+//     console.log(this.price);
+//   },
+// };
+
+// function callAction(action) {
+//   action();
+// }
+
+// callAction(product.showPrice.bind(product));
