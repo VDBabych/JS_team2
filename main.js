@@ -786,7 +786,7 @@ let input3 = 'aabb'; //-1
 //addItems(item) - отримує новий товар та додає його до поточних
 //removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
 
-function Storange(arg) {
+/* function Storange(arg) {
   this.items = arg;
   
 } 
@@ -817,7 +817,62 @@ const store = new Storange(arr1);
 store.removeItem(21);
 store.addItems(10);
 console.log(store.getItems());
+ */
 
+// Напиши клас Client який створює об'єкт
+//з властивостями login email
+//Оголоси приватні властивості #login #email,
+//доступ до яких зроби через геттер та сеттер login email
 
+class Client {
 
+  #email
+  #login
+  constructor ({login, email}) {
+    this.#login = login;
+    this.#email = email
+  }
 
+  get login () {
+    return this.#login 
+  }
+
+  set login (newLogin) {
+    this.#login = newLogin
+  }
+
+  get email () {
+    return this.#email
+  }
+
+  set email (newEmail) {
+    this.#email = newEmail
+  }
+}
+
+const petya = new Client ({login: "Petya", email: "jjj@gmail.com"})
+console.log(petya);
+
+petya.login="vasya"
+console.log(petya.login);
+
+class ClientType extends Client {
+
+  constructor ({login, email,password}) {
+    super({login, email})
+    this.password = password;
+  }
+  
+  get passwordClient () {
+    return this.password
+  }
+
+  set passwordClient (newPassword) {
+    this.password = newPassword
+  }
+}
+const tolya = new ClientType ({login: "tolya", email: "jjj@gmail.com", password:"hfneuf" })
+console.log(tolya);
+
+tolya.passwordClient = "h,dlpljfg"
+console.log(tolya.passwordClient)
