@@ -679,12 +679,12 @@ console.log(newPrices) */
 //   const var1 = [...a].sort((a, b) => a - b);
 //   const var2 = [...b].sort((a, b) => a - b);
 
-  //   for (let i = 0; i < var1.length; i += 1) {
-  //     if (var1[i] * var1[i] !== var2[i]) {
-  //       return false;
-  //     }
-  //   }
-  //   return true;
+//   for (let i = 0; i < var1.length; i += 1) {
+//     if (var1[i] * var1[i] !== var2[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
 //   return var1.map((el) => el * el).every((el, index) => el === var2[index]);
 // };
 
@@ -756,23 +756,68 @@ let input3 = 'aabb'; //-1
 
 // Створіть функцію, яка виводитиме нам усіх гравців
 
-const sport = {
-  tournament: 'The Master',
-  players: [
-    {
-      name: 'Wood',
-      age: 37
-    },
-    {
-      name: 'Mike',
-      age: 43
-    }
-  ],
-  getPlayers() {
-    console.log(this);
-    const arrow = () => { console.log(this); }
-    arrow()
-  },
+// const sport = {
+//   tournament: 'The Master',
+//   players: [
+//     {
+//       name: 'Wood',
+//       age: 37
+//     },
+//     {
+//       name: 'Mike',
+//       age: 43
+//     }
+//   ],
+//   getPlayers() {
+//     console.log(this);
+//     const arrow = () => { console.log(this); }
+//     arrow()
+//   },
+// };
+
+// sport.getPlayers();
+
+//2. Напиши функцію конструктор Storage який створює об'єкти
+//Для управління складом товарів.
+//При виклику отримуватиме один агрумент - початковий масив товарів,
+//і записувати їх у властивість items.
+//Додай методи класу:
+//getItems() - повертайте масив товарів
+//addItems(item) - отримує новий товар та додає його до поточних
+//removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
+
+function Storange(arg) {
+  this.items = arg;
+  
+} 
+
+Storange.prototype.getItems = function () {
+  return this.items;
+};
+  
+Storange.prototype.addItems = function (item) {
+  this.items.push(item);
 };
 
-sport.getPlayers();
+Storange.prototype.removeItem = function (item) {
+  const index = this.items.indexOf(item);
+
+  if (index === -1) {
+    return console.log('nohhing');
+  } 
+
+  this.items.splice(index, 1);
+};
+
+const arr1 = [1, 2, 3];
+
+const store = new Storange(arr1);
+
+
+store.removeItem(21);
+store.addItems(10);
+console.log(store.getItems());
+
+
+
+
