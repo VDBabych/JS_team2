@@ -824,55 +824,106 @@ console.log(store.getItems());
 //Оголоси приватні властивості #login #email,
 //доступ до яких зроби через геттер та сеттер login email
 
-class Client {
+// class Client {
 
-  #email
-  #login
-  constructor ({login, email}) {
-    this.#login = login;
-    this.#email = email
-  }
+//   #email
+//   #login
+//   constructor ({login, email}) {
+//     this.#login = login;
+//     this.#email = email
+//   }
 
-  get login () {
-    return this.#login 
-  }
+//   get login () {
+//     return this.#login
+//   }
 
-  set login (newLogin) {
-    this.#login = newLogin
-  }
+//   set login (newLogin) {
+//     this.#login = newLogin
+//   }
 
-  get email () {
-    return this.#email
-  }
+//   get email () {
+//     return this.#email
+//   }
 
-  set email (newEmail) {
-    this.#email = newEmail
-  }
-}
+//   set email (newEmail) {
+//     this.#email = newEmail
+//   }
+// }
 
-const petya = new Client ({login: "Petya", email: "jjj@gmail.com"})
-console.log(petya);
+// const petya = new Client ({login: "Petya", email: "jjj@gmail.com"})
+// console.log(petya);
 
-petya.login="vasya"
-console.log(petya.login);
+// petya.login="vasya"
+// console.log(petya.login);
 
-class ClientType extends Client {
+// class ClientType extends Client {
 
-  constructor ({login, email,password}) {
-    super({login, email})
-    this.password = password;
-  }
+//   constructor ({login, email,password}) {
+//     super({login, email})
+//     this.password = password;
+//   }
   
-  get passwordClient () {
-    return this.password
-  }
+//   get passwordClient () {
+//     return this.password
+//   }
 
-  set passwordClient (newPassword) {
-    this.password = newPassword
-  }
-}
-const tolya = new ClientType ({login: "tolya", email: "jjj@gmail.com", password:"hfneuf" })
-console.log(tolya);
+//   set passwordClient (newPassword) {
+//     this.password = newPassword
+//   }
+// }
+// const tolya = new ClientType ({login: "tolya", email: "jjj@gmail.com", password:"hfneuf" })
+// console.log(tolya);
 
-tolya.passwordClient = "h,dlpljfg"
-console.log(tolya.passwordClient)
+// tolya.passwordClient = "h,dlpljfg"
+// console.log(tolya.passwordClient)
+
+// Напиши клас Notes який управляє колекцією нотаток у
+//Властивості items.
+//Нотатка це об'єкт із властивостями text priority
+//Додай класу статичну властивість Priority,
+//у якому зберігатиметься об'єкт із пріоритетами.
+//Додай методи addNote(note), removeNote(text)
+//updatePriority(text, newPriority)
+
+// class Notes {
+//   static Priority = {
+//     HIGHT: "hight",
+//     LOW: "low",
+//   }
+//   constructor() {
+//     this.items = [];
+//   }
+  
+//   addNote(note) {
+//     this.items.push(note)
+//   }
+//   removeNote(text) {
+//     this.items = this.items.filter(el => el.text !== text)
+//   }
+//     updateText(text, newText) {
+//       this.items = this.items.map((el) => {
+//         if (el.text === text) {
+//           el.text = newText
+//         }
+//       return el
+//     })
+//   }
+  // updateText(text, newText) {
+  //   const note = this.items.find(el => el.text === text)
+  //   console.log(note === this.items[0]);
+  //   note.text = newText
+  //   console.log(note);
+  // }
+  //   updateText(text, newText) {
+  //   const index = this.items.findIndex(el => el.text === text)
+  //   this.items[index].text = newText;
+  // }
+// }
+
+// const obj1 = new Notes()
+// obj1.addNote({ text: 'Hello world', priority: Notes.Priority.HIGHT })
+// obj1.addNote({ text: 'Hello Tolik', priority: Notes.Priority.HIGHT })
+// obj1.addNote({ text: 'Hello Mango', priority: Notes.Priority.LOW })
+// obj1.updateText('Hello world', 'Hello Poli')
+// obj1.removeNote('Hello Poli')
+// console.log(obj1);
