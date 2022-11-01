@@ -1061,6 +1061,24 @@ console.log(store.getItems());
 // past(1, 1, 1), 3661000
 // console.log(past(0, 1, 1));
 
+
+// У цій ката йдеться про множення даного числа на вісім, якщо воно парне, і на дев’ять в іншому випадку.
+
+
+// const simpleMultiplication = (mas) => mas.map(number => number % 2 === 0 ? number * 8 : number * 9);
+
+// console.log(simpleMultiplication([2, 3, 7, 10]));
+
+
+
+
+
+
+
+
+// EXTRA
+
+
 // Teemo is not really excited about the new year's eve, but he has to celebrate it with his friends anyway.
 
 // He has a really big passion about programming and he wants to be productive till midnight. He wants to know how many minutes he has left to work on his new project.
@@ -1081,3 +1099,9 @@ console.log(store.getItems());
 // 10.00 am => "840 minutes"
 
 // 23.59 pm => "1 minute"
+
+// const fullDay = new Date(new Date().setHours(0,0,0,0));
+
+// // Test.assertEquals(minutesToMidnight(fullDay), "1440 minutes");
+
+// console.log(fullDay);
