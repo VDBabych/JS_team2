@@ -927,3 +927,40 @@ console.log(store.getItems());
 // obj1.updateText('Hello world', 'Hello Poli')
 // obj1.removeNote('Hello Poli')
 // console.log(obj1);
+
+
+
+
+// код приймає два рядки і повертає
+// найдовший рядок перевернутий і доповнений
+// з найкоротшим рядком на почтку і на кінці розвернутого рядка
+// якщо рядки мають однакову довжину, перший
+// вважається найдовшим
+
+// 1 - создать функцию
+// 2- 
+
+function shorter_reverse_longer(a, b) {
+  // let short = '';
+  // let long = '';
+
+
+  // if (a.length >= b.length) {
+  //   long = a;
+  //   short = b;
+  // } else {
+  //   long = b;
+  //   short = a;
+  // }
+
+  // const result = short + long.split('').reverse().join('') + short;
+
+  // return result;
+
+  return a.length >= b.length ? b + a.split('').reverse().join('') + b : a + b.split('').reverse().join('') + a;
+}
+
+
+console.log(shorter_reverse_longer('first', 'abcde'));// 'abcdetsrifabcde';
+console.log(shorter_reverse_longer('hello', 'bau'));// 'bauollehbau';
+console.log(shorter_reverse_longer('fghi', 'abcde'));// 'fghiedcbafghi';
