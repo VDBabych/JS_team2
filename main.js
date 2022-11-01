@@ -693,9 +693,9 @@ console.log(newPrices) */
 // Знайти перший унікальний символ у рядку
 //У рядку будуть лише літери латинського алфавіту і вони будуть у lowerCase
 
-let input1 = "leetcode"; //0
-let input2 = "loveleetcode"; //2
-let input3 = "aabb"; //-1
+let input1 = 'leetcode'; //0
+let input2 = 'loveleetcode'; //2
+let input3 = 'aabb'; //-1
 
 // function makeMeCoffee (string) {
 //   const array = string.split("");
@@ -997,3 +997,25 @@ console.log(store.getItems());
 // const userName = "name";
 // user[userName] = "Mango";
 // console.log(user[userName]);
+
+// Дзідзьо та Сара думають, що вони закохані, але про те, де вони живуть, вони дізнаються про це лише тоді, коли зірвуть по квітці. Якщо на одній квітці парна кількість пелюсток, а на іншій непарна кількість пелюсток, це означає, що вони закохані.
+
+// Напишіть функцію, яка братиме кількість пелюсток кожної квітки та повертатиме значення true, якщо вони закохані, і значення false, якщо ні.
+
+// function lovefunc(flower1, flower2) {
+//   // if ((flower1 % 2 === 0 && flower2 % 2 !== 0) || (flower2 % 2 === 0 && flower1 % 2 !== 0)) {
+//   //   return 'YOU ARE BELOVED';
+//   // }
+//   // return 'SORRY, TRY AGAIN';
+//   // return flower1 % 2 !== flower2 % 2;
+//   return (flower1 + flower2) % 2 === 1;
+// }
+// console.log(lovefunc(1, 4));
+// console.log(lovefunc(2, 2));
+// console.log(lovefunc(0, 1));
+// console.log(lovefunc(0, 0));
+
+// lovefunc(1, 4); // true;
+// lovefunc(2, 2); // false;
+// lovefunc(0, 1); // true;
+// lovefunc(0, 0); // false;
