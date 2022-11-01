@@ -693,9 +693,9 @@ console.log(newPrices) */
 // Знайти перший унікальний символ у рядку
 //У рядку будуть лише літери латинського алфавіту і вони будуть у lowerCase
 
-let input1 = 'leetcode'; //0
-let input2 = 'loveleetcode'; //2
-let input3 = 'aabb'; //-1
+let input1 = "leetcode"; //0
+let input2 = "loveleetcode"; //2
+let input3 = "aabb"; //-1
 
 // function makeMeCoffee (string) {
 //   const array = string.split("");
@@ -738,14 +738,12 @@ let input3 = 'aabb'; //-1
 //   return [...input].indexOf([...input].find((el, i, array) => array.indexOf(el) === array.lastIndexOf(el)));
 // };
 
-
 // const unique = (str) => {
 //   const arr = str.split("");
 //   const un = arr.find((el) => arr.indexOf(el) === arr.lastIndexOf(el));
 //   if (!un) return -1;
 //   return arr.indexOf(un)
 // };
-
 
 // console.log(makeMeCoffee(input1));
 // console.log(makeMeCoffee(input2));
@@ -862,7 +860,7 @@ console.log(store.getItems());
 //     super({login, email})
 //     this.password = password;
 //   }
-  
+
 //   get passwordClient () {
 //     return this.password
 //   }
@@ -893,7 +891,7 @@ console.log(store.getItems());
 //   constructor() {
 //     this.items = [];
 //   }
-  
+
 //   addNote(note) {
 //     this.items.push(note)
 //   }
@@ -908,16 +906,16 @@ console.log(store.getItems());
 //       return el
 //     })
 //   }
-  // updateText(text, newText) {
-  //   const note = this.items.find(el => el.text === text)
-  //   console.log(note === this.items[0]);
-  //   note.text = newText
-  //   console.log(note);
-  // }
-  //   updateText(text, newText) {
-  //   const index = this.items.findIndex(el => el.text === text)
-  //   this.items[index].text = newText;
-  // }
+// updateText(text, newText) {
+//   const note = this.items.find(el => el.text === text)
+//   console.log(note === this.items[0]);
+//   note.text = newText
+//   console.log(note);
+// }
+//   updateText(text, newText) {
+//   const index = this.items.findIndex(el => el.text === text)
+//   this.items[index].text = newText;
+// }
 // }
 
 // const obj1 = new Notes()
@@ -928,9 +926,6 @@ console.log(store.getItems());
 // obj1.removeNote('Hello Poli')
 // console.log(obj1);
 
-
-
-
 // код приймає два рядки і повертає
 // найдовший рядок перевернутий і доповнений
 // з найкоротшим рядком на почтку і на кінці розвернутого рядка
@@ -938,29 +933,67 @@ console.log(store.getItems());
 // вважається найдовшим
 
 // 1 - создать функцию
-// 2- 
+// 2-
 
-function shorter_reverse_longer(a, b) {
-  // let short = '';
-  // let long = '';
+// function shorter_reverse_longer(a, b) {
+//   // let short = '';
+//   // let long = '';
 
+//   // if (a.length >= b.length) {
+//   //   long = a;
+//   //   short = b;
+//   // } else {
+//   //   long = b;
+//   //   short = a;
+//   // }
 
-  // if (a.length >= b.length) {
-  //   long = a;
-  //   short = b;
-  // } else {
-  //   long = b;
-  //   short = a;
-  // }
+//   // const result = short + long.split('').reverse().join('') + short;
 
-  // const result = short + long.split('').reverse().join('') + short;
+//   // return result;
 
-  // return result;
+//   return a.length >= b.length ? b + a.split('').reverse().join('') + b : a + b.split('').reverse().join('') + a;
+// }
 
-  return a.length >= b.length ? b + a.split('').reverse().join('') + b : a + b.split('').reverse().join('') + a;
-}
+// console.log(shorter_reverse_longer('first', 'abcde'));// 'abcdetsrifabcde';
+// console.log(shorter_reverse_longer('hello', 'bau'));// 'bauollehbau';
+// console.log(shorter_reverse_longer('fghi', 'abcde'));// 'fghiedcbafghi';
 
+// Маючи список і число, створіть новий список, який міститиме кожен номер списку щонайбільше N разів без зміни порядку.
+// Наприклад, якщо вхідне число дорівнює 2, а список вхідних даних — [1,2,3,1,2,1,2,3], ви берете [1,2,3,1,2], відкидаєте наступний [ 1,2], оскільки це призведе до того, що 1 і 2 будуть у результаті 3 рази, а потім візьме 3, що призведе до [1,2,3,1,2,3].
+// Зі списком [20,37,20,21] і номером 1 результатом буде [20,37,21]
+// deleteNth([20, 37, 20, 21], 1) // [20, 37, 21];
 
-console.log(shorter_reverse_longer('first', 'abcde'));// 'abcdetsrifabcde';
-console.log(shorter_reverse_longer('hello', 'bau'));// 'bauollehbau';
-console.log(shorter_reverse_longer('fghi', 'abcde'));// 'fghiedcbafghi';
+// function deleteNth(arr, n) {
+//   const result = [];
+//   const obj = {};
+//   for (const number of arr) {
+//     if (obj[number]) {
+//       obj[number] = obj[number] + 1;
+//     } else {
+//       obj[number] = 1;
+//     }
+//     if (obj[number] <= n) {
+//       result.push(number);
+//     }
+//   }
+//   console.log(result);
+// }
+
+// function deleteNth(arr, n) {
+//   const obj = {};
+//   const result = arr.filter((el) => {
+// obj[el] = (obj[el] || 0) + 1;
+// return obj[el] <= n;
+// console.log(obj);
+// console.log((obj[el] = obj[el] + 1 || 1));
+//   return (obj[el] = obj[el] + 1 || 1) <= n;
+// });
+// console.log(result);
+// }
+
+// deleteNth([1, 1, 3, 3, 7, 2, 2, 2, 2], 3); // [1, 1, 3, 3, 7, 2, 2, 2];
+// deleteNth([20, 21, 20, 37], 1);
+// const user = {};
+// const userName = "name";
+// user[userName] = "Mango";
+// console.log(user[userName]);
