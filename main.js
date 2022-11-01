@@ -693,9 +693,9 @@ console.log(newPrices) */
 // Знайти перший унікальний символ у рядку
 //У рядку будуть лише літери латинського алфавіту і вони будуть у lowerCase
 
-let input1 = 'leetcode'; //0
-let input2 = 'loveleetcode'; //2
-let input3 = 'aabb'; //-1
+let input1 = "leetcode"; //0
+let input2 = "loveleetcode"; //2
+let input3 = "aabb"; //-1
 
 // function makeMeCoffee (string) {
 //   const array = string.split("");
@@ -998,6 +998,28 @@ console.log(store.getItems());
 // user[userName] = "Mango";
 // console.log(user[userName]);
 
+// const deleteNth = (array, N) => {
+//   const result = [];
+//   for (const num of array) {
+//     if (result.filter((el) => el === num).length < N) {
+//       result.push(num);
+//     }
+//   }
+
+//   return result;
+// };
+// console.log(
+//   deleteNth(
+//     [
+//       1,
+//       1,
+//       3,
+
+//     ],
+//     2
+//   )
+// );
+
 // Дзідзьо та Сара думають, що вони закохані, але про те, де вони живуть, вони дізнаються про це лише тоді, коли зірвуть по квітці. Якщо на одній квітці парна кількість пелюсток, а на іншій непарна кількість пелюсток, це означає, що вони закохані.
 
 // Напишіть функцію, яка братиме кількість пелюсток кожної квітки та повертатиме значення true, якщо вони закохані, і значення false, якщо ні.
@@ -1019,3 +1041,43 @@ console.log(store.getItems());
 // lovefunc(2, 2); // false;
 // lovefunc(0, 1); // true;
 // lovefunc(0, 0); // false;
+
+// Годинник показує h годин, m хвилин і s секунд після півночі.
+
+// Ваше завдання — написати функцію, яка повертає час з опівночі в мілісекундах.
+// past(0,1,1),61000
+// past(1, 1, 1), 3661000
+
+// const past = (h, m, s) => {
+//   let result = 0;
+//   let secToMili = s * 1000;
+//   let minToMili = m * 60 * 1000;
+//   let hoursToMili = h * 60 * 60 * 1000;
+//   result = secToMili + minToMili + hoursToMili;
+//   return result;
+// };
+
+// past(0,1,1),61000
+// past(1, 1, 1), 3661000
+// console.log(past(0, 1, 1));
+
+// Teemo is not really excited about the new year's eve, but he has to celebrate it with his friends anyway.
+
+// He has a really big passion about programming and he wants to be productive till midnight. He wants to know how many minutes he has left to work on his new project.
+// He doesn't want to look on the clock all the time, so he thought about a function, which returns him the number of minutes.
+
+// Can you write him a function, so he can stay productive?
+
+// The function minutesToMidnight(d) will take a date object as parameter. Return the number of minutes in the following format:
+
+// "x minute(s)"
+
+// You will always get a date object with of today with a random timestamp.
+// You have to round the number of minutes.
+// Milliseconds doesn't matter!
+
+// Some examples:
+
+// 10.00 am => "840 minutes"
+
+// 23.59 pm => "1 minute"
