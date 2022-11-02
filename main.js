@@ -1189,16 +1189,19 @@ formEl.addEventListener('click', (e) => {
   formEl.style.top = randomither(height).toString() + '%';
   formEl.style.left = randomither(width).toString() + '%';
   const formCoordinate = e.target.getBoundingClientRect();
-  console.log(formCoordinate);
-  console.log('formCoordinate.left >= areaWinner.left', formCoordinate.left >= coordinate.left);
-  console.log('formCoordinate.left <= areaWinner.rigth', formCoordinate.left <= coordinate.right);
-  console.log('formCoordinate.top <= areaWinner.top', formCoordinate.top <= coordinate.top);
-  console.log('formCoordinate.top >= areaWinner.bottom', formCoordinate.top >= coordinate.bottom);
-  console.log('formCoordinate.top', formCoordinate.top);
-  console.log('areaWinner.top', coordinate.top);
-  console.log('formCoordinate.left', formCoordinate.left);
-  console.log('coordinate.rigth', coordinate.right);
-  if (formCoordinate.left >= coordinate.left && formCoordinate.left <= coordinate.right && formCoordinate.top >= coordinate.top && formCoordinate.top <= coordinate.bottom) {
+
+  console.log('formCoordinateTop', formCoordinate.top);
+  console.log('formCoordinateleft', formCoordinate.left);
+  console.log('formCoordinateBottom', formCoordinate.bottom);
+  console.log('formCoordinateRight', formCoordinate.right);
+
+  console.log('coordinate.right', coordinate.right);
+  console.log('coordinate.left', coordinate.left);
+  console.log('coordinate.top', coordinate.top);
+  console.log('coordinate.bottom', coordinate.bottom);
+
+  
+  if ((formCoordinate.left >= coordinate.left && formCoordinate.left <= coordinate.right || formCoordinate.right >= coordinate.left && formCoordinate.right <= coordinate.right) && (formCoordinate.top >= coordinate.top && formCoordinate.top <= coordinate.bottom || formCoordinate.bottom >= coordinate.top && formCoordinate.bottom <= coordinate.bottom)) {
     console.log('winner');
   }
 });
