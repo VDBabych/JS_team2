@@ -1112,34 +1112,74 @@ console.log(store.getItems());
 //* Парним li вказати червоний фон, непарним - синім
 //Для виконання завдання використовуйте createElement
 
-const itemList = document.createElement(`ol`);
-const buttonAdd = document.createElement(`button`)
-const buttonRemove = document.createElement(`button`)
-const inputLi = document.createElement(`input`)
-buttonAdd.textContent = `Add`;
-buttonRemove.textContent = `Remove`;
-buttonRemove.disabled = true
-document.body.append(inputLi, buttonAdd, buttonRemove, itemList)
+// const itemList = document.createElement(`ol`);
+// const buttonAdd = document.createElement(`button`)
+// const buttonRemove = document.createElement(`button`)
+// const inputLi = document.createElement(`input`)
+// buttonAdd.textContent = `Add`;
+// buttonRemove.textContent = `Remove`;
+// buttonRemove.disabled = true
+// document.body.append(inputLi, buttonAdd, buttonRemove, itemList)
 
-buttonAdd.addEventListener(`click`, ()=>{const text = inputLi.value||`default`;
-const itemLi = document.createElement(`li`);
-itemLi.textContent = text;
-itemList.append(itemLi);
-buttonRemove.disabled = false;
-inputLi.value = ``
-console.log(itemList.children.length);
-const even = itemList.children.length%2 === 0
-itemLi.style.background = even ? `yellow` : `blue`
-  console.log(even);})
+// buttonAdd.addEventListener(`click`, ()=>{const text = inputLi.value||`default`;
+// const itemLi = document.createElement(`li`);
+// itemLi.textContent = text;
+// itemList.append(itemLi);
+// buttonRemove.disabled = false;
+// inputLi.value = ``
+// console.log(itemList.children.length);
+// const even = itemList.children.length%2 === 0
+// itemLi.style.background = even ? `yellow` : `blue`
+//   console.log(even);})
 
-  buttonRemove.addEventListener(`click`,()=>{
-    console.log(itemList.hasChildNodes());
-    itemList.lastElementChild.remove()
-    if(!itemList.hasChildNodes()) {
-      buttonRemove.disabled = true
-      return
-    }
+//   buttonRemove.addEventListener(`click`,()=>{
+//     console.log(itemList.hasChildNodes());
+//     itemList.lastElementChild.remove()
+//     if(!itemList.hasChildNodes()) {
+//       buttonRemove.disabled = true
+//       return
+//     }
 
-  })
+//   })
 
 
+
+
+//Створити невелику гру:)
+// - Спочатку на екрані користувача відображатиметься
+//яка - то форма (коло, квадрат, прямокутник)
+// - При натисканні на неї в рандомному порядку форма повинна
+//змінюватися на іншу
+// - Форма щоразу повинна з'являтися у різних місцях на сторінці
+// - Колір форми в рандомному порядку змінюється,
+const forms = [
+  'width: 100px; height: 100px; border-width: 1px; border-color: #000000',
+  'width: 100px; height: 100px; border-radius: 50%; border-width: 1px; border-color: #000000',
+  'width: 150px; height: 100px; border-width: 1px; border-color: #000000',
+  'width: 200px; height: 100px; border-radius: 100px / 50px;',
+  'width: 150px; height: 100px; transform: skew(20deg);',
+];
+
+const formEl = document.createElement('div');
+formEl.style.cssText = forms[2];
+formEl.style.background = getRandomHexColor();
+document.body.append(formEl);
+formEl.addEventListener('click', () => {
+  const index = randomither(forms.length)
+  formEl.style.cssText = forms[index];
+  formEl.style.background = getRandomHexColor();
+  formEl.style.border = '5px solid black'
+  formEl.style.position = 'absolute';
+  const height = 100 - (formEl.clientHeight * 100) / document.documentElement.clientHeight;
+  const width = 100 - (formEl.clientWidth * 100) / document.documentElement.clientWidth;
+  formEl.style.top = randomither(height).toString() + '%';
+  formEl.style.left = randomither(width).toString() + '%';
+})
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+
+const randomither = max => {
+  return Math.floor(Math.random() * max);
+};
