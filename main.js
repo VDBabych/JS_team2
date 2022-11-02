@@ -1105,3 +1105,41 @@ console.log(store.getItems());
 // // Test.assertEquals(minutesToMidnight(fullDay), "1440 minutes");
 
 // console.log(fullDay);
+
+// Створити маркований список.
+//Створити кнопки "Add" "Remove", які змінюватимуть склад списку
+//Створити input з якого будемо отримувати значення, яке буде в li
+//* Парним li вказати червоний фон, непарним - синім
+//Для виконання завдання використовуйте createElement
+
+const itemList = document.createElement(`ol`);
+const buttonAdd = document.createElement(`button`)
+const buttonRemove = document.createElement(`button`)
+const inputLi = document.createElement(`input`)
+buttonAdd.textContent = `Add`;
+buttonRemove.textContent = `Remove`;
+buttonRemove.disabled = true
+document.body.append(inputLi, buttonAdd, buttonRemove, itemList)
+
+buttonAdd.addEventListener(`click`, ()=>{const text = inputLi.value||`default`;
+const itemLi = document.createElement(`li`);
+itemLi.textContent = text;
+itemList.append(itemLi);
+buttonRemove.disabled = false;
+inputLi.value = ``
+console.log(itemList.children.length);
+const even = itemList.children.length%2 === 0
+itemLi.style.background = even ? `yellow` : `blue`
+  console.log(even);})
+
+  buttonRemove.addEventListener(`click`,()=>{
+    console.log(itemList.hasChildNodes());
+    itemList.lastElementChild.remove()
+    if(!itemList.hasChildNodes()) {
+      buttonRemove.disabled = true
+      return
+    }
+
+  })
+
+
