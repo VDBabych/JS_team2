@@ -1160,21 +1160,48 @@ const forms = [
   'width: 150px; height: 100px; transform: skew(20deg);',
 ];
 
+const areaWinner = document.querySelector('.area-winner');
+
+const coordinate = areaWinner.getBoundingClientRect();
+console.log(coordinate);
+
 const formEl = document.createElement('div');
 formEl.style.cssText = forms[2];
 formEl.style.background = getRandomHexColor();
 document.body.append(formEl);
-formEl.addEventListener('click', () => {
-  const index = randomither(forms.length)
+formEl.addEventListener('click', (e) => {
+  console.log(e);
+  
+
+  console.log('x', e.clientX);
+  console.log('y', e.clientY);
+  
+
+  const index = randomither(forms.length);
   formEl.style.cssText = forms[index];
   formEl.style.background = getRandomHexColor();
-  formEl.style.border = '5px solid black'
+  formEl.style.border = '5px solid black';
   formEl.style.position = 'absolute';
+  formEl.style.zIndex = '1';
+
   const height = 100 - (formEl.clientHeight * 100) / document.documentElement.clientHeight;
   const width = 100 - (formEl.clientWidth * 100) / document.documentElement.clientWidth;
   formEl.style.top = randomither(height).toString() + '%';
   formEl.style.left = randomither(width).toString() + '%';
-})
+  const formCoordinate = e.target.getBoundingClientRect();
+  console.log(formCoordinate);
+  console.log('formCoordinate.left >= areaWinner.left', formCoordinate.left >= coordinate.left);
+  console.log('formCoordinate.left <= areaWinner.rigth', formCoordinate.left <= coordinate.right);
+  console.log('formCoordinate.top <= areaWinner.top', formCoordinate.top <= coordinate.top);
+  console.log('formCoordinate.top >= areaWinner.bottom', formCoordinate.top >= coordinate.bottom);
+  console.log('formCoordinate.top', formCoordinate.top);
+  console.log('areaWinner.top', coordinate.top);
+  console.log('formCoordinate.left', formCoordinate.left);
+  console.log('coordinate.rigth', coordinate.right);
+  if (formCoordinate.left >= coordinate.left && formCoordinate.left <= coordinate.right && formCoordinate.top >= coordinate.top && formCoordinate.top <= coordinate.bottom) {
+    console.log('winner');
+  }
+});
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
