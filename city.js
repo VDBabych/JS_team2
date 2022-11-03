@@ -15,7 +15,7 @@ const handleInput = function (event) {
         <li>or a state</li>`;
         return
     }
-    const filteredArray = cityList.filter((el) => el.city.toLowerCase().includes(userInput))
+    const filteredArray = cityList.filter((el) => el.city.toLowerCase().includes(userInput) || el.state.toLowerCase().includes(userInput))
     const markup = filteredArray
         .map(({ city, state, population }) => {
             return `<li><span class="name">${city}, ${state}</span>
