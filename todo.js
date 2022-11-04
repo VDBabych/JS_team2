@@ -18,16 +18,27 @@ submitBtn.addEventListener('click',()=>{
 })
 
 
-itemEl.forEach(el => {
-    el.addEventListener('change', (event)=>{
+inboxEl.addEventListener('click',)
+
+
+function checkBoxHendler(event){
+    event.target
+    console.log(event.target.)
+
+}
+
+
+// itemEl.forEach(el => {
+//     el.addEventListener('change', (event)=>{
         
-    event.target.nextElementSibling.classList.toggle('haha')
+//     event.target.nextElementSibling.classList.toggle('haha')
 
 
-        // if(event.target.checked){
-        //     event.target.nextElementSibling.classList.add('haha')
-        // }else{
-        //     event.target.nextElementSibling.classList.remove('haha')
-        // }
-    })
-})
+//         // if(event.target.checked){
+//         //     event.target.nextElementSibling.classList.add('haha')
+//         // }else{
+//         //     event.target.nextElementSibling.classList.remove('haha')
+//         // }
+//     })
+// })
+
