@@ -11,7 +11,7 @@ html {
     box-sizing: inherit;
 }
 
-input {
+/* input {
     width: 100%;
     padding: 20px;
 }
@@ -19,8 +19,8 @@ input {
 .search-form {
     max-width: 400px;
     margin: 50px auto;
-}
-
+} */
+/* 
 input.search {
     margin: 0;
     text-align: center;
@@ -73,4 +73,60 @@ span.population {
 
 .is-hidden {
     display: none;
+} */
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  .inbox {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.haha {
+  background: #f9f9f9;
+  text-decoration: line-through;
+}
+input[type='checkbox'] {
+  margin: 20px;
+}
+
+p {
+  margin: 0;
+  padding: 20px;
+  transition: background 0.2s;
+  flex: 1;
+  font-size: 20px;
+  font-weight: 200;
+  border-left: 1px solid #d1e2ff;
+}
+
+.search2 {
+    margin: 0;
+    text-align: center;
+    outline: 0;
+    border: 10px solid #f7f7f7;
+    width: 400px;
+
+    top: 10px;
+
+    border-radius: 5px;
+    font-size: 40px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
 }
